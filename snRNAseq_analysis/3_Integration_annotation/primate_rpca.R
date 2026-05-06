@@ -280,6 +280,8 @@ saveRDS(renamed.primate, file = "Data_EC_atlas/Seurat_obj/primate/renamed.primat
 
 ##### Save stripped down object for further integration #####
 
+merged.primate$evolution <- "PRIMATE"
+
 # switch to RNA assay for stripping data set down
 DefaultAssay(merged.primate) <- "RNA"
 
@@ -300,16 +302,16 @@ saveRDS(human.diet, file = "Data_EC_atlas/Seurat_obj/primate/renamed.human.neu_a
 
 
 ##### Save final annotated object #####
-renamed.primate@meta.data <- renamed.primate@meta.data %>%
+merged.primate@meta.data <- merged.primate@meta.data %>%
   select(orig.ident, percent.mt, nCount_SCT, nFeature_SCT, sample, species, major_cell_types, neuronal_celltype_species, evolution)
 
-saveRDS(renamed.primate, file = "Data_EC_atlas/Seurat_obj/primate/renamed_primate_annot.rds")
+saveRDS(merged.primate, file = "Data_EC_atlas/Seurat_obj/primate/renamed_primate_annot.rds")
 
 # Subset EXN and IN
-exn.primate <- subset(renamed.primate, idents = c("Pvalb", "Vip", "Sst", "Lamp5", "Lamp5_Lhx6", "Pax6_Adarb2", "Pvalb_Vipr2", "Sst_Chodl"), invert = T)
+exn.primate <- subset(merged.primate, idents = c("Pvalb", "Vip", "Sst", "Lamp5", "Lamp5_Lhx6", "Pax6_Adarb2", "Pvalb_Vipr2", "Sst_Chodl"), invert = T)
 
 
-in.primate <- subset(renamed.primate, idents = c("Pvalb", "Vip", "Sst", "Lamp5", "Lamp5_Lhx6", "Pax6_Adarb2", "Pvalb_Vipr2", "Sst_Chodl"))
+in.primate <- subset(merged.primate, idents = c("Pvalb", "Vip", "Sst", "Lamp5", "Lamp5_Lhx6", "Pax6_Adarb2", "Pvalb_Vipr2", "Sst_Chodl"))
 
 
 saveRDS(exn.primate, file = "Data_EC_atlas/Seurat_obj/primate/renamed.primateEXN_annot.rds")

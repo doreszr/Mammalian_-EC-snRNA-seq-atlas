@@ -12,4 +12,4 @@ Spatial navigation is a core cognitive function, relying on the integration of m
 
 Raw snRNA-seq data and MRI data generated in this study will be deposited at publicly available depositories upon acceptance.
 
-Count matrices and processed data can be downloaded from  .
+Count matrices and processed data can be downloaded from  https://kkh.bric.ku.dk/Dorottya/.

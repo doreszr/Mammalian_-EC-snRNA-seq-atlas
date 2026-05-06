@@ -191,6 +191,11 @@ DimPlot(baboon3)
 DimPlot(baboon5)
 
 
+
+
+#### RENAMING from baboon to human gene names ####
+
+
 ##### Import your data in the form of GEX count matricies #####
 baboon1.data <- Read10X("Data_EC_atlas/count_matrix/baboon/B1/filtered_feature_bc_matrix")
 baboon2.data <- Read10X("Data_EC_atlas/count_matrix/baboon/B2/filtered_feature_bc_matrix")
@@ -218,7 +223,7 @@ baboon5 <- CreateSeuratObject(counts = baboon5.data,
 
 
 # load ortho df baboon vs human
-allorthobh <- read.csv("Data_EC_atlas/orthologues/mappingortho/baboon_vs_humanallorthobh.csv", sep = ";")
+allorthobh <- read.csv("Data_EC_atlas/orthologues/mappingortho/baboon_vs_human/allorthobh.csv", sep = ";")
 
 
 # create a count matrix from RNA assaq

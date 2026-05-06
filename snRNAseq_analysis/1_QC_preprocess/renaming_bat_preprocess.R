@@ -162,6 +162,8 @@ DimPlot(bat3)
 DimPlot(bat4)
 DimPlot(bat5)
 
+#### RENAMING from bat to mouse gene names ####
+
 ##### Import your data in the form of GEX count matricies #####
 bat3.data <- Read10X("Data_EC_atlas/count_matrix/fruitbat/EFB3/filtered_feature_bc_matrix")
 bat4.data <- Read10X("Data_EC_atlas/count_matrix/fruitbat/EFB4/filtered_feature_bc_matrix")
@@ -183,7 +185,7 @@ bat5 <- CreateSeuratObject(counts = bat5.data,
 
 
 # load ortho df bat vs mouse
-allorthobatm <- read.csv("Data_EC_atlas/orthologues/mappingortho/bat_vs_mouseallorthobatm.csv", sep = ";")
+allorthobatm <- read.csv("Data_EC_atlas/orthologues/mappingortho/bat_vs_mouse/allorthobatm.csv", sep = ";")
 
 
 # create a count matrix from RNA assaq

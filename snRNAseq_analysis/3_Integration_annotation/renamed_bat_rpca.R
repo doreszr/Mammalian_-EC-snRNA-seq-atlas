@@ -316,7 +316,7 @@ merged.bat.neu <- AddMetaData(merged.bat.neu, metadata = predictions.subclass)
 
 merged.bat.neu$subclass_label <- merged.bat.neu$predicted.id
 
-table(merged.bat.neu$class_label)
+merged.bat <- merged.bat.neu
 
 
 ##### Transform object for further annotation #####
@@ -341,7 +341,7 @@ saveRDS(merged.bat.neu, file = "Data_EC_atlas/Seurat_obj/fruitbat/renamed.merged
 ##### Subset and save final annotated neuronal data set #####
 
 merged.bat@meta.data <- merged.bat@meta.data %>%
-  select(orig.ident, percent.mt, nCount_SCT, nFeature_SCT, sample, species, neuronal_celltype_species)
+  select(orig.ident, percent.mt, nCount_SCT, nFeature_SCT, sample, species, neuronal_celltype_species, evolution)
 
 
 

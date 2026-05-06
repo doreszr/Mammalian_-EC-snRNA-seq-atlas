@@ -172,7 +172,7 @@ saveRDS(mouse.diet, file = "Data_EC_atlas/Seurat_obj/mouse/merged.mouse_annot_di
 ##### Subset and save final annotated neuronal data set #####
 
 merged.mouse@meta.data <- merged.mouse@meta.data %>%
-  select(orig.ident, percent.mt, nCount_SCT, nFeature_SCT, sample, species, neuronal_celltype_species, class_label)
+  select(orig.ident, percent.mt, nCount_SCT, nFeature_SCT, sample, species, evolution, neuronal_celltype_species, class_label)
 
 
 # Subset IN and EXN neurons

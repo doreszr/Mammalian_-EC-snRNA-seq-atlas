@@ -87,7 +87,7 @@ merged.mammal@meta.data$species_neuronal_celltype <- paste0(as.character(merged.
 
 ##### Save final annotated object #####
 merged.mammal@meta.data <- merged.mammal@meta.data %>%
-  select(orig.ident, percent.mt, nCount_SCT, nFeature_SCT, sample, species, major_cell_types, neuronal_celltype_species, evolution, vo_neuronal_celltype_species, evo_neuronal_celltype, species_neuronal_celltype_species, species_neuronal_celltype)
+  select(orig.ident, percent.mt, nCount_SCT, nFeature_SCT, sample, species, major_cell_types, neuronal_celltype_species, evolution, evo_neuronal_celltype_species, evo_neuronal_celltype, species_neuronal_celltype_species, species_neuronal_celltype)
 
 # subset to IN and EXN
 in.mammal <- subset(merged.mammal, idents = c("Pvalb", "Vip_primate", "Sst", "Lamp5", "Sncg_Pax6", "Pvalb_Vipr2", "Sst_Chodl_mouse"))
